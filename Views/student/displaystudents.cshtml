@@ -1,0 +1,36 @@
+﻿    @model List<day_10_mvc_day2_lab.Models.StudentData>
+    @{
+        ViewBag.Title = "displaystudents";
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+
+
+    <div class="students-data">
+        <h2>students data</h2>
+        <table>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>age</td>
+                <td>email</td>
+                <td>details</td>
+            </tr>
+
+            @foreach (day_10_mvc_day2_lab.Models.StudentData student in Model)
+            {
+                     if (@student.id == 0) { continue; }                   
+
+                    <tr>
+                        <td>@student.id</td>
+                        <td>@student.name</td>
+                        <td>@student.age</td>
+                        <td>@student.email</td>
+                        <td>@Html.ActionLink("view details","details",new { id = student.id })</td>
+                    </tr>
+                }
+                
+
+
+        </table>
+    </div>
+

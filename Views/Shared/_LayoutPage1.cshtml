@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/style.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <img src="~/Content/assets/logo.svg" alt="logo">
+        </div>
+        <ul class="nav-box">
+            <li>@Html.ActionLink("home","Index")</li>
+            <li>@Html.ActionLink("students", "displaystudents")</li>
+        </ul>
+        <div class="sign-box">
+            <button class="sign-in">sign in</button> <button class="sign-up">sign up</button>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/Content/app.js"></script>
+    <script runat="server">
+        const signUpBtns = document.querySelectorAll(".sign-up");
+        const signInBtns = document.querySelectorAll(".sign-in");
+
+        for (const btn of signUpBtns) {
+
+            btn.addEventListener("click", (e) => {
+                location.href = "/student/signup";
+
+            })
+
+        }
+        for (const btn of signInBtns) {
+
+            btn.addEventListener("click", (e) => {
+                location.href = "/student/signup";
+            })
+
+        }
+    </script>
+</body>
+</html>

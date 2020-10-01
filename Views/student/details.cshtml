@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+@model day_10_mvc_day2_lab.Models.StudentData
+
+<div class="student-details-box">
+    <h2>
+        hello, @Model.name </ h2 >
+        <h4>your id:</h4>
+        <p>
+            @Model.id </ p >
+        <h4>your name</h4>
+    <p>
+        @Model.name </ p >
+    <h4>your age</h4>
+<p>
+    @Model.age </ p >
+<h4>your email</h4>
+<p>@Model.email </ p >
+</div>
+
